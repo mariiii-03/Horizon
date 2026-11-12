@@ -182,8 +182,8 @@ Do not commit `.env` to version control.
 
 - [Maria Tariq](https://github.com/mariiii-03) (Lead)
 - [Wasiq Mansoor](https://github.com/Wasiq2006)
-- [Nimra Sultan](https://github.com/nimra-username)
-- [Aminah Tariq](https://github.com/aminah-username)
+- [Nimra Sultan](https://github.com/nimrasultan2)
+- [Aminah Tariq](https://github.com/aminah56)
 - [Zainab Tariq](https://github.com/zainab-username)
 - [Zainab Zafar](https://github.com/zainabzafar-username)
 ---
