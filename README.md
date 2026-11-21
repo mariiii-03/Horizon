@@ -86,42 +86,51 @@ A structured learning module that consolidates the platform's content.
 
 ## Data Sources
 
-| Service | Purpose |
-|---|---|
-| [NASA Open APIs](https://api.nasa.gov) | API catalogue and developer key |
-| [Solar System Exploration](https://science.nasa.gov/solar-system/) | Planetary educational content |
-| [APOD](https://apod.nasa.gov/apod/) | Daily astronomical images |
-| [NeoWs](https://api.nasa.gov) | Near-Earth asteroid data |
-| [DONKI](https://api.nasa.gov) | Solar activity and space weather |
-| [NASA Image and Video Library](https://images.nasa.gov) | Images and video assets |
-| [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu) | Exoplanet data |
-| [NASA GIBS](https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api) | Satellite imagery |
+| Service                                                                                                            | Purpose                          |
+| ------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
+| [NASA Open APIs](https://api.nasa.gov)                                                                             | API catalogue and developer key  |
+| [Solar System Exploration](https://science.nasa.gov/solar-system/)                                                 | Planetary educational content    |
+| [APOD](https://apod.nasa.gov/apod/)                                                                                | Daily astronomical images        |
+| [NeoWs](https://api.nasa.gov)                                                                                      | Near-Earth asteroid data         |
+| [DONKI](https://api.nasa.gov)                                                                                      | Solar activity and space weather |
+| [NASA Image and Video Library](https://images.nasa.gov)                                                            | Images and video assets          |
+| [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu)                                                | Exoplanet data                   |
+| [NASA GIBS](https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api) | Satellite imagery                |
 
 **APOD endpoint migration.** NASA's API catalogue notes that the legacy APOD endpoint is scheduled for retirement. This project uses the newer endpoint at `https://science.nasa.gov/wp-json/wp/v2/apod-basic`.
 
 ---
 
 ## Technology Stack
-(will be edited later)
-| Layer | Technology |
-|---|---|
-| Frontend | [Framework] |
-| 3D Rendering | [Library] |
-| Data Layer | NASA Open APIs (REST) |
-| Deployment | [Platform] |
+
+| Layer        | Technology                                                                               |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| Framework    | [Next.js](https://nextjs.org) (App Router): pages and backend API routes in one project  |
+| Language     | TypeScript                                                                               |
+| 3D Rendering | [Three.js](https://threejs.org) via [React Three Fiber](https://r3f.docs.pmnd.rs) + drei |
+| Styling      | [Tailwind CSS](https://tailwindcss.com)                                                  |
+| State        | [Zustand](https://zustand.docs.pmnd.rs)                                                  |
+| Charts       | [Recharts](https://recharts.org)                                                         |
+| Data Layer   | NASA Open APIs (REST), called only from the server                                       |
+| Deployment   | [Vercel](https://vercel.com)                                                             |
+| CI           | GitHub Actions: lint, type check, format check, build                                    |
 
 ---
+
+## Getting Started
+
+Requires Node.js 22.18 or newer.
 
 ### Installation
 
 ```bash
-git clone https://github.com/<username>/<repository>.git
-cd <repository>
+git clone https://github.com/mariiii-03/Horizon.git
+cd Horizon
 npm install
 ```
 
 ### Running Locally
-(will be edited )
+
 ```bash
 cp .env.example .env
 # Add your NASA API key to .env (see Configuration)
@@ -143,11 +152,11 @@ npm start
 
 Environment variables are read from a `.env` file in the project root.
 
-| Variable | Description | Required |
-|---|---|---|
-| `NASA_API_KEY` | API key issued by NASA Open APIs | Yes |
+| Variable       | Description                      | Required |
+| -------------- | -------------------------------- | -------- |
+| `NASA_API_KEY` | API key issued by NASA Open APIs | Yes      |
 
-Do not commit `.env` to version control.
+Do not commit `.env` to version control. `DEMO_KEY` works for trying things out but is limited to 30 requests an hour; get a free personal key at [api.nasa.gov](https://api.nasa.gov). The key is only read on the server (`server/nasa/client.ts`) and never reaches the browser.
 
 ---
 
@@ -155,17 +164,33 @@ Do not commit `.env` to version control.
 
 ```
 .
-├── src/
-│   ├── solar-system/      Interactive 3D Solar System
-│   ├── discoveries/       APOD integration
-│   ├── asteroids/         NeoWs asteroid tracker
-│   ├── space-weather/     DONKI space weather
-│   ├── exoplanets/        Exoplanet Archive integration
-│   └── academy/           Lessons, quizzes and progress tracking
-├── public/                Static assets
-├── .env.example
-└── README.md
+├── app/
+│   ├── <module>/page.tsx      One page per module (thin: renders from features/)
+│   └── api/                   Backend routes: apod, asteroids, space-weather,
+│                              planets, exoplanets, academy
+├── features/<module>/         Frontend components for each module
+├── components/ui/             Shared UI components
+├── store/                     Zustand stores (favourites, quiz progress)
+├── server/                    Server-only code, never imported by a page
+│   ├── nasa/                  NASA API client (key + caching) and per-API helpers
+│   ├── data/                  Static data: planets, exoplanets, academy content
+│   └── scripts/               Data refresh scripts
+├── types/                     Shared types: the API contract between backend and frontend
+├── mocks/                     Sample API responses for building screens early
+├── public/                    Static assets (planet textures)
+└── .github/                   CI, CODEOWNERS, pull request template
 ```
+
+---
+
+## Contributing
+
+1. Pick an issue and create a branch from `main`: `feat/asteroids-api`, `fix/apod-video`, `chore/ci`.
+2. Write commits in [Conventional Commits](https://www.conventionalcommits.org) style: `feat(asteroids): add NeoWs feed client`.
+3. Open a pull request and fill in the template. CI runs lint, type check, format check and build; Vercel posts a preview link.
+4. A code owner reviews (see `.github/CODEOWNERS`). Squash and merge once approved.
+
+Run `npm run format` before pushing so the format check passes.
 
 ---
 
@@ -186,6 +211,7 @@ Do not commit `.env` to version control.
 - [Aminah Tariq](https://github.com/aminah56)
 - [Zainab Tariq](https://github.com/ZainabTariq23)
 - [Zainab Zafar](https://github.com/ZainabZafar1234)
+
 ---
 
 ## Acknowledgements
