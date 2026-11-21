@@ -260,3 +260,11 @@ export const quizzes: Record<string, Quiz> = {
     ],
   },
 };
+
+/**
+ * Look up a quiz by topic. Uses Object.hasOwn so URL values like "constructor" or
+ * "__proto__" can't reach built-in object properties.
+ */
+export function getQuiz(topic: string): Quiz | undefined {
+  return Object.hasOwn(quizzes, topic) ? quizzes[topic] : undefined;
+}
