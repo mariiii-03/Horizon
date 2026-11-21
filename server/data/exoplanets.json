@@ -16,7 +16,8 @@
     "semiMajorAxisAu": 0.0485,
     "equilibriumTempK": 218,
     "discoveryYear": 2016,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": true
   },
   {
     "id": "barnard-b",
@@ -35,7 +36,8 @@
     "semiMajorAxisAu": 0.0229,
     "equilibriumTempK": 438,
     "discoveryYear": 2024,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
   },
   {
     "id": "ross-128-b",
@@ -54,7 +56,8 @@
     "semiMajorAxisAu": 0.0496,
     "equilibriumTempK": 301,
     "discoveryYear": 2017,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
   },
   {
     "id": "teegardens-star-b",
@@ -73,7 +76,8 @@
     "semiMajorAxisAu": 0.0259,
     "equilibriumTempK": 277,
     "discoveryYear": 2019,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": true
   },
   {
     "id": "ltt-1445-a-b",
@@ -92,7 +96,8 @@
     "semiMajorAxisAu": 0.0381,
     "equilibriumTempK": 431,
     "discoveryYear": 2019,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "gj-667-c-c",
@@ -110,7 +115,8 @@
     "orbitalPeriodDays": 28.14,
     "semiMajorAxisAu": 0.125,
     "discoveryYear": 2013,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": true
   },
   {
     "id": "trappist-1-b",
@@ -129,7 +135,8 @@
     "semiMajorAxisAu": 0.0115,
     "equilibriumTempK": 398,
     "discoveryYear": 2016,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "trappist-1-c",
@@ -148,7 +155,8 @@
     "semiMajorAxisAu": 0.0158,
     "equilibriumTempK": 340,
     "discoveryYear": 2016,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "trappist-1-d",
@@ -167,7 +175,8 @@
     "semiMajorAxisAu": 0.0223,
     "equilibriumTempK": 286,
     "discoveryYear": 2016,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "trappist-1-e",
@@ -186,7 +195,8 @@
     "semiMajorAxisAu": 0.0293,
     "equilibriumTempK": 250,
     "discoveryYear": 2017,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "trappist-1-f",
@@ -205,7 +215,8 @@
     "semiMajorAxisAu": 0.0385,
     "equilibriumTempK": 218,
     "discoveryYear": 2017,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "trappist-1-g",
@@ -224,7 +235,8 @@
     "semiMajorAxisAu": 0.0468,
     "equilibriumTempK": 197,
     "discoveryYear": 2017,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "trappist-1-h",
@@ -243,7 +255,8 @@
     "semiMajorAxisAu": 0.0619,
     "equilibriumTempK": 172,
     "discoveryYear": 2017,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "55-cnc-e",
@@ -262,7 +275,8 @@
     "semiMajorAxisAu": 0.0154,
     "equilibriumTempK": 1958,
     "discoveryYear": 2004,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
   },
   {
     "id": "gj-1214-b",
@@ -281,7 +295,8 @@
     "semiMajorAxisAu": 0.0151,
     "equilibriumTempK": 567,
     "discoveryYear": 2009,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "lhs-1140-b",
@@ -300,7 +315,8 @@
     "semiMajorAxisAu": 0.0946,
     "equilibriumTempK": 226,
     "discoveryYear": 2017,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "51-peg-b",
@@ -319,7 +335,8 @@
     "semiMajorAxisAu": 0.052,
     "equilibriumTempK": 1329,
     "discoveryYear": 1995,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
   },
   {
     "id": "hd-189733-b",
@@ -338,7 +355,8 @@
     "semiMajorAxisAu": 0.0313,
     "equilibriumTempK": 1209,
     "discoveryYear": 2005,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
   },
   {
     "id": "toi-700-d",
@@ -357,7 +375,8 @@
     "semiMajorAxisAu": 0.1642,
     "equilibriumTempK": 269,
     "discoveryYear": 2020,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "toi-700-e",
@@ -376,7 +395,8 @@
     "semiMajorAxisAu": 0.1336,
     "equilibriumTempK": 273,
     "discoveryYear": 2023,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "k2-18-b",
@@ -395,7 +415,8 @@
     "semiMajorAxisAu": 0.1429,
     "equilibriumTempK": 284,
     "discoveryYear": 2015,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "hr-8799-b",
@@ -414,7 +435,8 @@
     "semiMajorAxisAu": 68,
     "equilibriumTempK": 1200,
     "discoveryYear": 2008,
-    "discoveryMethod": "Imaging"
+    "discoveryMethod": "Imaging",
+    "inHabitableZone": false
   },
   {
     "id": "hd-209458-b",
@@ -433,7 +455,8 @@
     "semiMajorAxisAu": 0.0471,
     "equilibriumTempK": 1459,
     "discoveryYear": 1999,
-    "discoveryMethod": "Radial Velocity"
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-16-b",
@@ -451,7 +474,8 @@
     "semiMajorAxisAu": 0.7048,
     "equilibriumTempK": 206,
     "discoveryYear": 2011,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-1649-c",
@@ -469,7 +493,8 @@
     "semiMajorAxisAu": 0.0649,
     "equilibriumTempK": 234,
     "discoveryYear": 2020,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-186-f",
@@ -488,7 +513,8 @@
     "semiMajorAxisAu": 0.432,
     "equilibriumTempK": 177,
     "discoveryYear": 2014,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-10-b",
@@ -506,7 +532,8 @@
     "semiMajorAxisAu": 0.0169,
     "equilibriumTempK": 2188,
     "discoveryYear": 2011,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-22-b",
@@ -525,7 +552,8 @@
     "semiMajorAxisAu": 0.812,
     "equilibriumTempK": 279,
     "discoveryYear": 2011,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "kelt-9-b",
@@ -544,7 +572,8 @@
     "semiMajorAxisAu": 0.0337,
     "equilibriumTempK": 3921,
     "discoveryYear": 2017,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "wasp-121-b",
@@ -563,7 +592,8 @@
     "semiMajorAxisAu": 0.0257,
     "equilibriumTempK": 2409,
     "discoveryYear": 2016,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-62-f",
@@ -582,7 +612,8 @@
     "semiMajorAxisAu": 0.718,
     "equilibriumTempK": 208,
     "discoveryYear": 2013,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "kepler-442-b",
@@ -600,7 +631,8 @@
     "semiMajorAxisAu": 0.409,
     "equilibriumTempK": 241,
     "discoveryYear": 2015,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
   },
   {
     "id": "wasp-12-b",
@@ -618,7 +650,8 @@
     "semiMajorAxisAu": 0.0234,
     "equilibriumTempK": 2601,
     "discoveryYear": 2008,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "kepler-452-b",
@@ -637,7 +670,8 @@
     "semiMajorAxisAu": 1.046,
     "equilibriumTempK": 265,
     "discoveryYear": 2015,
-    "discoveryMethod": "Transit"
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
   },
   {
     "id": "psr-b1257-12-c",
