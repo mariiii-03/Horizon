@@ -79,10 +79,13 @@ export function isInHabitableZone(
   luminositySuns: number | undefined,
   semiMajorAxisAu: number | undefined,
 ): boolean | undefined {
-  // TODO(Wasiq): decide the habitable-zone boundaries and implement this.
-  void luminositySuns;
-  void semiMajorAxisAu;
-  return undefined;
+  if (luminositySuns === undefined || semiMajorAxisAu === undefined) return undefined;
+  if (luminositySuns <= 0 || semiMajorAxisAu <= 0) return undefined;
+
+  // Conservative zone (Kopparapu et al. 2013): 0.95-1.67 AU for the Sun.
+  // Light falls off with distance squared, so the zone moves out with sqrt(luminosity).
+  const scale = Math.sqrt(luminositySuns);
+  return semiMajorAxisAu >= 0.95 * scale && semiMajorAxisAu <= 1.67 * scale;
 }
 
 function round(value: number | null, digits: number): number | undefined {
