@@ -1,0 +1,33 @@
+# Owners are asked to review any pull request that touches their files.
+# Later lines win over earlier ones.
+
+# Backend — Aminah: APOD, Asteroid Tracker, Space Weather
+/app/api/apod/            @aminah56
+/app/api/asteroids/       @aminah56
+/app/api/space-weather/   @aminah56
+/server/nasa/apod.ts      @aminah56
+/server/nasa/neows.ts     @aminah56
+/server/nasa/donki.ts     @aminah56
+/types/apod.ts            @aminah56
+/types/asteroid.ts        @aminah56
+/types/space-weather.ts   @aminah56
+/mocks/                   @aminah56
+
+# Backend — Wasiq: Solar System data, Exoplanets, Academy, shared client
+/app/api/planets/         @Wasiq2006
+/app/api/exoplanets/      @Wasiq2006
+/app/api/academy/         @Wasiq2006
+/server/nasa/client.ts    @Wasiq2006
+/server/http.ts           @Wasiq2006
+/server/data/             @Wasiq2006
+/server/scripts/          @Wasiq2006
+/types/planet.ts          @Wasiq2006
+/types/exoplanet.ts       @Wasiq2006
+/types/academy.ts         @Wasiq2006
+/types/api.ts             @aminah56 @Wasiq2006
+
+# Frontend — owners yet to be decided (features/, components/, store/, app pages)
+
+# Project setup
+/.github/                 @mariiii-03 @Wasiq2006
+/package.json             @mariiii-03 @Wasiq2006

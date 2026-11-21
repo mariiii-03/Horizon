@@ -1,0 +1,4 @@
+node_modules
+.next
+package-lock.json
+server/data/exoplanets.json
