@@ -30,7 +30,8 @@ export async function nasaGet<T>(path: string, params: Record<string, string> = 
 
   const url = new URL(path, BASE_URL);
   for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
-  url.searchParams.set("api_key", process.env.NASA_API_KEY ?? "DEMO_KEY");
+  // `||`, not `??`: an empty NASA_API_KEY= line in .env should fall back to DEMO_KEY too.
+  url.searchParams.set("api_key", process.env.NASA_API_KEY || "DEMO_KEY");
 
   let res: Response;
   try {
