@@ -10,7 +10,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "data:exoplanets": "node server/scripts/fetch-exoplanets.ts"
+    "data:exoplanets": "node server/scripts/fetch-exoplanets.mts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",

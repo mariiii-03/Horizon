@@ -1,1 +1,691 @@
-[]
+[
+  {
+    "id": "proxima-cen-b",
+    "name": "Proxima Cen b",
+    "highlight": "Orbits the closest star to the Sun, just over 4 light-years away.",
+    "hostStar": {
+      "name": "Proxima Cen",
+      "spectralType": "M5.5 V",
+      "temperatureK": 2900,
+      "luminositySuns": 0.0015,
+      "distanceLy": 4.2
+    },
+    "radiusEarth": 1.02,
+    "massEarth": 1.06,
+    "orbitalPeriodDays": 11.18,
+    "semiMajorAxisAu": 0.0485,
+    "equilibriumTempK": 218,
+    "discoveryYear": 2016,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": true
+  },
+  {
+    "id": "barnard-b",
+    "name": "Barnard b",
+    "highlight": "A small rocky world around Barnard's Star, the second-closest star system to us.",
+    "hostStar": {
+      "name": "Barnard's star",
+      "spectralType": "M3.5-4 V",
+      "temperatureK": 3195,
+      "luminositySuns": 0.0036,
+      "distanceLy": 6
+    },
+    "radiusEarth": 0.72,
+    "massEarth": 0.3,
+    "orbitalPeriodDays": 3.15,
+    "semiMajorAxisAu": 0.0229,
+    "equilibriumTempK": 438,
+    "discoveryYear": 2024,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
+  },
+  {
+    "id": "ross-128-b",
+    "name": "Ross 128 b",
+    "highlight": "A nearby rocky planet around a quiet red dwarf that rarely flares.",
+    "hostStar": {
+      "name": "Ross 128",
+      "spectralType": "M4",
+      "temperatureK": 3192,
+      "luminositySuns": 0.0036,
+      "distanceLy": 11
+    },
+    "radiusEarth": 1.11,
+    "massEarth": 1.4,
+    "orbitalPeriodDays": 9.87,
+    "semiMajorAxisAu": 0.0496,
+    "equilibriumTempK": 301,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
+  },
+  {
+    "id": "teegardens-star-b",
+    "name": "Teegarden's Star b",
+    "highlight": "One of the most Earth-like planets known by size and starlight received.",
+    "hostStar": {
+      "name": "Teegarden's Star",
+      "spectralType": "M7.0 V",
+      "temperatureK": 3034,
+      "luminositySuns": 0.0007,
+      "distanceLy": 12.5
+    },
+    "radiusEarth": 1.05,
+    "massEarth": 1.16,
+    "orbitalPeriodDays": 4.91,
+    "semiMajorAxisAu": 0.0259,
+    "equilibriumTempK": 277,
+    "discoveryYear": 2019,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": true
+  },
+  {
+    "id": "ltt-1445-a-b",
+    "name": "LTT 1445 A b",
+    "highlight": "A rocky planet in a system of three red dwarf stars, 22 light-years away.",
+    "hostStar": {
+      "name": "LTT 1445 A",
+      "spectralType": "M3.0",
+      "temperatureK": 3562,
+      "luminositySuns": 0.009,
+      "distanceLy": 22.4
+    },
+    "radiusEarth": 1.34,
+    "massEarth": 2.73,
+    "orbitalPeriodDays": 5.36,
+    "semiMajorAxisAu": 0.0381,
+    "equilibriumTempK": 431,
+    "discoveryYear": 2019,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "gj-667-c-c",
+    "name": "GJ 667 C c",
+    "highlight": "Orbits one star in a triple-star system.",
+    "hostStar": {
+      "name": "GJ 667 C",
+      "spectralType": "M1.5 V",
+      "temperatureK": 3350,
+      "luminositySuns": 0.0137,
+      "distanceLy": 23.6
+    },
+    "radiusEarth": 1.77,
+    "massEarth": 3.8,
+    "orbitalPeriodDays": 28.14,
+    "semiMajorAxisAu": 0.125,
+    "discoveryYear": 2013,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": true
+  },
+  {
+    "id": "trappist-1-b",
+    "name": "TRAPPIST-1 b",
+    "highlight": "Innermost of seven Earth-sized planets packed around one tiny red star.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 1.12,
+    "massEarth": 1.37,
+    "orbitalPeriodDays": 1.51,
+    "semiMajorAxisAu": 0.0115,
+    "equilibriumTempK": 398,
+    "discoveryYear": 2016,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "trappist-1-c",
+    "name": "TRAPPIST-1 c",
+    "highlight": "One of seven Earth-sized TRAPPIST-1 planets; JWST found little sign of a thick atmosphere.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 1.1,
+    "massEarth": 1.31,
+    "orbitalPeriodDays": 2.42,
+    "semiMajorAxisAu": 0.0158,
+    "equilibriumTempK": 340,
+    "discoveryYear": 2016,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "trappist-1-d",
+    "name": "TRAPPIST-1 d",
+    "highlight": "On the inner edge of the TRAPPIST-1 habitable zone.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 0.79,
+    "massEarth": 0.39,
+    "orbitalPeriodDays": 4.05,
+    "semiMajorAxisAu": 0.0223,
+    "equilibriumTempK": 286,
+    "discoveryYear": 2016,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "trappist-1-e",
+    "name": "TRAPPIST-1 e",
+    "highlight": "One of the best-known candidates for liquid water outside our Solar System.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 0.92,
+    "massEarth": 0.69,
+    "orbitalPeriodDays": 6.1,
+    "semiMajorAxisAu": 0.0293,
+    "equilibriumTempK": 250,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "trappist-1-f",
+    "name": "TRAPPIST-1 f",
+    "highlight": "A TRAPPIST-1 world in the habitable zone that may be icy.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 1.05,
+    "massEarth": 1.04,
+    "orbitalPeriodDays": 9.21,
+    "semiMajorAxisAu": 0.0385,
+    "equilibriumTempK": 218,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "trappist-1-g",
+    "name": "TRAPPIST-1 g",
+    "highlight": "The largest TRAPPIST-1 planet, near the outer edge of the habitable zone.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 1.13,
+    "massEarth": 1.32,
+    "orbitalPeriodDays": 12.35,
+    "semiMajorAxisAu": 0.0468,
+    "equilibriumTempK": 197,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "trappist-1-h",
+    "name": "TRAPPIST-1 h",
+    "highlight": "The outermost and coldest of the seven TRAPPIST-1 planets.",
+    "hostStar": {
+      "name": "TRAPPIST-1",
+      "spectralType": "M8.0 V",
+      "temperatureK": 2566,
+      "luminositySuns": 0.0006,
+      "distanceLy": 40.5
+    },
+    "radiusEarth": 0.76,
+    "massEarth": 0.33,
+    "orbitalPeriodDays": 18.77,
+    "semiMajorAxisAu": 0.0619,
+    "equilibriumTempK": 172,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "55-cnc-e",
+    "name": "55 Cnc e",
+    "highlight": "A lava world so hot that one side may be covered in molten rock.",
+    "hostStar": {
+      "name": "55 Cnc",
+      "spectralType": "G8 V",
+      "temperatureK": 5172,
+      "luminositySuns": 0.6354,
+      "distanceLy": 41
+    },
+    "radiusEarth": 1.88,
+    "massEarth": 7.99,
+    "orbitalPeriodDays": 0.74,
+    "semiMajorAxisAu": 0.0154,
+    "equilibriumTempK": 1958,
+    "discoveryYear": 2004,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
+  },
+  {
+    "id": "gj-1214-b",
+    "name": "GJ 1214 b",
+    "highlight": "A 'sub-Neptune' wrapped in a thick, hazy atmosphere.",
+    "hostStar": {
+      "name": "GJ 1214",
+      "spectralType": "M4 V",
+      "temperatureK": 3101,
+      "luminositySuns": 0.0039,
+      "distanceLy": 47.8
+    },
+    "radiusEarth": 2.73,
+    "massEarth": 8.41,
+    "orbitalPeriodDays": 1.58,
+    "semiMajorAxisAu": 0.0151,
+    "equilibriumTempK": 567,
+    "discoveryYear": 2009,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "lhs-1140-b",
+    "name": "LHS 1140 b",
+    "highlight": "A dense 'super-Earth' that may be covered by a global ocean.",
+    "hostStar": {
+      "name": "LHS 1140",
+      "spectralType": "M4.5 V",
+      "temperatureK": 3096,
+      "luminositySuns": 0.0038,
+      "distanceLy": 48.9
+    },
+    "radiusEarth": 1.73,
+    "massEarth": 5.6,
+    "orbitalPeriodDays": 24.74,
+    "semiMajorAxisAu": 0.0946,
+    "equilibriumTempK": 226,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "51-peg-b",
+    "name": "51 Peg b",
+    "highlight": "The first planet found around a Sun-like star (1995), a Nobel Prize discovery.",
+    "hostStar": {
+      "name": "51 Peg",
+      "spectralType": "G5V",
+      "temperatureK": 5761,
+      "luminositySuns": 1.3687,
+      "distanceLy": 50.4
+    },
+    "radiusEarth": 14.1,
+    "massEarth": 193.88,
+    "orbitalPeriodDays": 4.23,
+    "semiMajorAxisAu": 0.052,
+    "equilibriumTempK": 1329,
+    "discoveryYear": 1995,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
+  },
+  {
+    "id": "hd-189733-b",
+    "name": "HD 189733 b",
+    "highlight": "A deep blue gas giant where it may rain glass sideways.",
+    "hostStar": {
+      "name": "HD 189733",
+      "spectralType": "K2 V",
+      "temperatureK": 5052,
+      "luminositySuns": 0.3458,
+      "distanceLy": 64.5
+    },
+    "radiusEarth": 12.67,
+    "massEarth": 359.15,
+    "orbitalPeriodDays": 2.22,
+    "semiMajorAxisAu": 0.0313,
+    "equilibriumTempK": 1209,
+    "discoveryYear": 2005,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
+  },
+  {
+    "id": "toi-700-d",
+    "name": "TOI-700 d",
+    "highlight": "An Earth-sized habitable-zone planet found by NASA's TESS mission.",
+    "hostStar": {
+      "name": "TOI-700",
+      "spectralType": "M2.5 V",
+      "temperatureK": 3459,
+      "luminositySuns": 0.0233,
+      "distanceLy": 101.5
+    },
+    "radiusEarth": 1.15,
+    "massEarth": 1.58,
+    "orbitalPeriodDays": 37.42,
+    "semiMajorAxisAu": 0.1642,
+    "equilibriumTempK": 269,
+    "discoveryYear": 2020,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "toi-700-e",
+    "name": "TOI-700 e",
+    "highlight": "TOI-700 d's slightly smaller neighbour, also in the habitable zone.",
+    "hostStar": {
+      "name": "TOI-700",
+      "spectralType": "M2.5 V",
+      "temperatureK": 3459,
+      "luminositySuns": 0.0233,
+      "distanceLy": 101.5
+    },
+    "radiusEarth": 0.92,
+    "massEarth": 0.72,
+    "orbitalPeriodDays": 27.81,
+    "semiMajorAxisAu": 0.1336,
+    "equilibriumTempK": 273,
+    "discoveryYear": 2023,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "k2-18-b",
+    "name": "K2-18 b",
+    "highlight": "JWST detected methane and carbon dioxide in its atmosphere.",
+    "hostStar": {
+      "name": "K2-18",
+      "spectralType": "M2.5 V",
+      "temperatureK": 3457,
+      "luminositySuns": 0.0253,
+      "distanceLy": 124
+    },
+    "radiusEarth": 2.37,
+    "massEarth": 8.92,
+    "orbitalPeriodDays": 32.94,
+    "semiMajorAxisAu": 0.1429,
+    "equilibriumTempK": 284,
+    "discoveryYear": 2015,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "hr-8799-b",
+    "name": "HR 8799 b",
+    "highlight": "One of four giant planets photographed directly around their star.",
+    "hostStar": {
+      "name": "HR 8799",
+      "spectralType": "A5 V",
+      "temperatureK": 7205,
+      "luminositySuns": 4.9201,
+      "distanceLy": 134.5
+    },
+    "radiusEarth": 13,
+    "massEarth": 2000,
+    "orbitalPeriodDays": 170000,
+    "semiMajorAxisAu": 68,
+    "equilibriumTempK": 1200,
+    "discoveryYear": 2008,
+    "discoveryMethod": "Imaging",
+    "inHabitableZone": false
+  },
+  {
+    "id": "hd-209458-b",
+    "name": "HD 209458 b",
+    "highlight": "The first exoplanet seen passing in front of its star.",
+    "hostStar": {
+      "name": "HD 209458",
+      "spectralType": "G0 V",
+      "temperatureK": 6091,
+      "luminositySuns": 1.7016,
+      "distanceLy": 157.5
+    },
+    "radiusEarth": 15.58,
+    "massEarth": 232.02,
+    "orbitalPeriodDays": 3.52,
+    "semiMajorAxisAu": 0.0471,
+    "equilibriumTempK": 1459,
+    "discoveryYear": 1999,
+    "discoveryMethod": "Radial Velocity",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-16-b",
+    "name": "Kepler-16 b",
+    "highlight": "A real 'Tatooine': it orbits two suns at once.",
+    "hostStar": {
+      "name": "Kepler-16",
+      "temperatureK": 4450,
+      "luminositySuns": 0.125,
+      "distanceLy": 244.9
+    },
+    "radiusEarth": 8.45,
+    "massEarth": 105.83,
+    "orbitalPeriodDays": 228.78,
+    "semiMajorAxisAu": 0.7048,
+    "equilibriumTempK": 206,
+    "discoveryYear": 2011,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-1649-c",
+    "name": "Kepler-1649 c",
+    "highlight": "Found by re-checking old Kepler data; close to Earth in size and warmth.",
+    "hostStar": {
+      "name": "Kepler-1649",
+      "temperatureK": 3240,
+      "luminositySuns": 0.0052,
+      "distanceLy": 300.7
+    },
+    "radiusEarth": 1.06,
+    "massEarth": 1.2,
+    "orbitalPeriodDays": 19.54,
+    "semiMajorAxisAu": 0.0649,
+    "equilibriumTempK": 234,
+    "discoveryYear": 2020,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-186-f",
+    "name": "Kepler-186 f",
+    "highlight": "The first Earth-sized planet found in a star's habitable zone (2014).",
+    "hostStar": {
+      "name": "Kepler-186",
+      "spectralType": "M1",
+      "temperatureK": 3755,
+      "luminositySuns": 0.055,
+      "distanceLy": 579.2
+    },
+    "radiusEarth": 1.17,
+    "massEarth": 1.71,
+    "orbitalPeriodDays": 129.94,
+    "semiMajorAxisAu": 0.432,
+    "equilibriumTempK": 177,
+    "discoveryYear": 2014,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-10-b",
+    "name": "Kepler-10 b",
+    "highlight": "Kepler's first confirmed rocky planet, with a year lasting less than a day.",
+    "hostStar": {
+      "name": "Kepler-10",
+      "temperatureK": 5708,
+      "luminositySuns": 1.1341,
+      "distanceLy": 605
+    },
+    "radiusEarth": 1.47,
+    "massEarth": 3.24,
+    "orbitalPeriodDays": 0.84,
+    "semiMajorAxisAu": 0.0169,
+    "equilibriumTempK": 2188,
+    "discoveryYear": 2011,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-22-b",
+    "name": "Kepler-22 b",
+    "highlight": "Kepler's first confirmed planet in a habitable zone, about 2.1 times Earth's size.",
+    "hostStar": {
+      "name": "Kepler-22",
+      "spectralType": "G5 V",
+      "temperatureK": 5596,
+      "luminositySuns": 0.6453,
+      "distanceLy": 634.8
+    },
+    "radiusEarth": 2.1,
+    "massEarth": 9.1,
+    "orbitalPeriodDays": 289.86,
+    "semiMajorAxisAu": 0.812,
+    "equilibriumTempK": 279,
+    "discoveryYear": 2011,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "kelt-9-b",
+    "name": "KELT-9 b",
+    "highlight": "The hottest known giant planet, hotter than many stars.",
+    "hostStar": {
+      "name": "KELT-9",
+      "spectralType": "A",
+      "temperatureK": 9270,
+      "luminositySuns": 38.9,
+      "distanceLy": 666.8
+    },
+    "radiusEarth": 21.7,
+    "massEarth": 915.35,
+    "orbitalPeriodDays": 1.48,
+    "semiMajorAxisAu": 0.0337,
+    "equilibriumTempK": 3921,
+    "discoveryYear": 2017,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "wasp-121-b",
+    "name": "WASP-121 b",
+    "highlight": "An 'ultra-hot Jupiter' with metal clouds and iron in its air.",
+    "hostStar": {
+      "name": "WASP-121",
+      "spectralType": "F6 V",
+      "temperatureK": 6628,
+      "luminositySuns": 4.4027,
+      "distanceLy": 880.3
+    },
+    "radiusEarth": 19.53,
+    "massEarth": 371.86,
+    "orbitalPeriodDays": 1.27,
+    "semiMajorAxisAu": 0.0257,
+    "equilibriumTempK": 2409,
+    "discoveryYear": 2016,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-62-f",
+    "name": "Kepler-62 f",
+    "highlight": "A super-Earth in the habitable zone that could hold surface water.",
+    "hostStar": {
+      "name": "Kepler-62",
+      "spectralType": "K2 V",
+      "temperatureK": 4925,
+      "luminositySuns": 0.2099,
+      "distanceLy": 981.3
+    },
+    "radiusEarth": 1.41,
+    "massEarth": 35,
+    "orbitalPeriodDays": 267.29,
+    "semiMajorAxisAu": 0.718,
+    "equilibriumTempK": 208,
+    "discoveryYear": 2013,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "kepler-442-b",
+    "name": "Kepler-442 b",
+    "highlight": "A rocky super-Earth that gets about two-thirds of the light Earth does.",
+    "hostStar": {
+      "name": "Kepler-442",
+      "temperatureK": 4402,
+      "luminositySuns": 0.1169,
+      "distanceLy": 1193.6
+    },
+    "radiusEarth": 1.34,
+    "massEarth": 2.36,
+    "orbitalPeriodDays": 112.31,
+    "semiMajorAxisAu": 0.409,
+    "equilibriumTempK": 241,
+    "discoveryYear": 2015,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": true
+  },
+  {
+    "id": "wasp-12-b",
+    "name": "WASP-12 b",
+    "highlight": "A hot Jupiter being slowly torn apart and swallowed by its star.",
+    "hostStar": {
+      "name": "WASP-12",
+      "temperatureK": 6265,
+      "luminositySuns": 3.9547,
+      "distanceLy": 1393.5
+    },
+    "radiusEarth": 22.03,
+    "massEarth": 467.21,
+    "orbitalPeriodDays": 1.09,
+    "semiMajorAxisAu": 0.0234,
+    "equilibriumTempK": 2601,
+    "discoveryYear": 2008,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "kepler-452-b",
+    "name": "Kepler-452 b",
+    "highlight": "Nicknamed 'Earth's cousin': it orbits a Sun-like star once every 385 days.",
+    "hostStar": {
+      "name": "Kepler-452",
+      "spectralType": "G2",
+      "temperatureK": 5757,
+      "luminositySuns": 1.2147,
+      "distanceLy": 1799.5
+    },
+    "radiusEarth": 1.63,
+    "massEarth": 3.29,
+    "orbitalPeriodDays": 384.84,
+    "semiMajorAxisAu": 1.046,
+    "equilibriumTempK": 265,
+    "discoveryYear": 2015,
+    "discoveryMethod": "Transit",
+    "inHabitableZone": false
+  },
+  {
+    "id": "psr-b1257-12-c",
+    "name": "PSR B1257+12 c",
+    "highlight": "Among the first exoplanets ever found (1992), orbiting a dead star (pulsar).",
+    "hostStar": {
+      "name": "PSR B1257+12",
+      "distanceLy": 1956.9
+    },
+    "radiusEarth": 1.91,
+    "massEarth": 4.3,
+    "orbitalPeriodDays": 66.54,
+    "semiMajorAxisAu": 0.36,
+    "discoveryYear": 1992,
+    "discoveryMethod": "Pulsar Timing"
+  }
+]
