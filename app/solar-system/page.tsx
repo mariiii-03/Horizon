@@ -1,10 +1,17 @@
-// Frontend — owner yet to be decided.
-// Keep this file thin: build the module in features/solar-system/components and render it here.
+import { Suspense } from "react";
+import { LoadingPanel } from "@/components/ui/ObservatoryPrimitives";
+import { SolarSystemWorkspace } from "@/features/solar-system/components/SolarSystemWorkspace";
+
 export default function SolarSystemPage() {
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-12">
-      <h1 className="text-3xl font-semibold">Interactive Solar System</h1>
-      <p className="mt-2 opacity-70">3D model of the Sun and the eight planets.</p>
-    </main>
+    <Suspense
+      fallback={
+        <main className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8">
+          <LoadingPanel height="h-[560px]" lines={5} />
+        </main>
+      }
+    >
+      <SolarSystemWorkspace />
+    </Suspense>
   );
 }
