@@ -79,13 +79,16 @@ export function SpaceWeatherWorkspace() {
   }, []);
 
   useEffect(() => {
-    void loadWeather(days);
+    let active = true;
+    Promise.resolve().then(() => {
+      if (active) void loadWeather(days);
+    });
+    return () => {
+      active = false;
+    };
   }, [days, loadWeather]);
 
-  const flares = useMemo(
-    () => events.filter((e): e is SolarFlare => e.kind === "flare"),
-    [events],
-  );
+  const flares = useMemo(() => events.filter((e): e is SolarFlare => e.kind === "flare"), [events]);
   const storms = useMemo(
     () => events.filter((e): e is GeomagneticStorm => e.kind === "storm"),
     [events],
@@ -246,7 +249,9 @@ export function SpaceWeatherWorkspace() {
                       STRONGEST WINDOW FLARE
                     </div>
                     <div className="text-lg font-medium text-white">
-                      {peakFlare ? `Class ${peakFlare.classType} Flare Eruption` : "No Flares Logged"}
+                      {peakFlare
+                        ? `Class ${peakFlare.classType} Flare Eruption`
+                        : "No Flares Logged"}
                     </div>
                   </div>
                   {peakFlare && (
@@ -286,12 +291,7 @@ export function SpaceWeatherWorkspace() {
                         </linearGradient>
                       </defs>
                       <XAxis dataKey="date" stroke="#6F7E93" fontSize={10} tickLine={false} />
-                      <YAxis
-                        stroke="#6F7E93"
-                        fontSize={10}
-                        tickLine={false}
-                        domain={[0, 5]}
-                      />
+                      <YAxis stroke="#6F7E93" fontSize={10} tickLine={false} domain={[0, 5]} />
                       <Tooltip
                         contentStyle={{
                           backgroundColor: "#080C15",
@@ -439,10 +439,32 @@ export function SpaceWeatherWorkspace() {
 
               <div className="relative mt-4 flex h-44 items-center justify-center overflow-hidden rounded border border-white/[0.07] bg-[#04070E]">
                 <svg viewBox="0 0 260 150" className="h-full w-full">
-                  <circle cx="130" cy="75" r="56" fill="none" stroke="#8CB8FF" strokeOpacity="0.18" strokeDasharray="3 3" />
-                  <circle cx="130" cy="75" r="38" fill="none" stroke="#8CB8FF" strokeOpacity="0.35" />
+                  <circle
+                    cx="130"
+                    cy="75"
+                    r="56"
+                    fill="none"
+                    stroke="#8CB8FF"
+                    strokeOpacity="0.18"
+                    strokeDasharray="3 3"
+                  />
+                  <circle
+                    cx="130"
+                    cy="75"
+                    r="38"
+                    fill="none"
+                    stroke="#8CB8FF"
+                    strokeOpacity="0.35"
+                  />
                   <circle cx="130" cy="75" r="24" fill="rgba(140,184,255,0.16)" />
-                  <circle cx="130" cy="75" r="15" fill="#030509" stroke="#DFC99D" strokeWidth="1.2" />
+                  <circle
+                    cx="130"
+                    cy="75"
+                    r="15"
+                    fill="#030509"
+                    stroke="#DFC99D"
+                    strokeWidth="1.2"
+                  />
                 </svg>
                 <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
                   <div>
@@ -487,7 +509,12 @@ export function SpaceWeatherWorkspace() {
                           color: "#E8EDF5",
                         }}
                       />
-                      <Bar dataKey="speed" name="CME Speed (km/s)" fill="#8CB8FF" radius={[3, 3, 0, 0]} />
+                      <Bar
+                        dataKey="speed"
+                        name="CME Speed (km/s)"
+                        fill="#8CB8FF"
+                        radius={[3, 3, 0, 0]}
+                      />
                     </BarChart>
                   </ResponsiveContainer>
                 ) : (

@@ -2,11 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import {
-  HeroHeader,
-  StatusPill,
-  TelemetryPanel,
-} from "@/components/ui/ObservatoryPrimitives";
+import { HeroHeader, StatusPill, TelemetryPanel } from "@/components/ui/ObservatoryPrimitives";
 import { SolarSystemCanvas } from "@/features/solar-system/components/SolarSystemCanvas";
 import { fetchApi, fetchApiWithHeaders } from "@/lib/api";
 import { useHasHydrated, useHorizonStore } from "@/store/useHorizonStore";
@@ -140,9 +136,7 @@ export function HomeObservatory() {
             <div className="font-mono text-[10px] tracking-[0.18em] text-[#7D8C9F] uppercase">
               ARCHITECTURE PORTAL 01
             </div>
-            <h2 className="mt-0.5 text-2xl font-medium text-[#EFF4FC]">
-              Interactive Solar System
-            </h2>
+            <h2 className="mt-0.5 text-2xl font-medium text-[#EFF4FC]">Interactive Solar System</h2>
           </div>
           <Link
             href="/solar-system"
@@ -194,7 +188,8 @@ export function HomeObservatory() {
                   OBSERVATIONAL MODE
                 </div>
                 <p className="mt-1 text-xs leading-relaxed text-[#AEB9C9]">
-                  3D WebGL heliocentric viewport with orbital path comparison &amp; physical ratio analyzer.
+                  3D WebGL heliocentric viewport with orbital path comparison &amp; physical ratio
+                  analyzer.
                 </p>
               </div>
               <Link
@@ -215,9 +210,7 @@ export function HomeObservatory() {
             <div className="font-mono text-[10px] tracking-[0.18em] text-[#7D8C9F] uppercase">
               ARCHITECTURE PORTAL 02
             </div>
-            <h2 className="mt-0.5 text-2xl font-medium text-[#EFF4FC]">
-              NASA Daily Discoveries
-            </h2>
+            <h2 className="mt-0.5 text-2xl font-medium text-[#EFF4FC]">NASA Daily Discoveries</h2>
           </div>
           <Link
             href="/discoveries"
@@ -247,6 +240,7 @@ export function HomeObservatory() {
                     </div>
                   </div>
                 ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={apod.url}
                     alt={apod.title}
@@ -323,9 +317,7 @@ export function HomeObservatory() {
           <div className="mb-5 rounded border border-white/[0.07] bg-[#060911]/85 p-4">
             <div className="flex items-center justify-between font-mono text-[9px] tracking-[0.15em] text-[#78879C] uppercase">
               <span>EARTH PROXIMITY AXIS (0.0 — 60+ LUNAR DISTANCES)</span>
-              <span className="text-[#8CB8FF]">
-                {asteroids.length} NEOs TRACKED THIS WEEK
-              </span>
+              <span className="text-[#8CB8FF]">{asteroids.length} NEOs TRACKED THIS WEEK</span>
             </div>
             <div className="relative mt-4 h-3 rounded-full bg-white/[0.05]">
               <div
@@ -435,7 +427,9 @@ export function HomeObservatory() {
                   MAX CME VEL
                 </div>
                 <div className="mt-1 font-mono text-base font-semibold text-[#8CB8FF]">
-                  {weatherSummary.maxCmeSpeed > 0 ? `${Math.round(weatherSummary.maxCmeSpeed)} km/s` : "—"}
+                  {weatherSummary.maxCmeSpeed > 0
+                    ? `${Math.round(weatherSummary.maxCmeSpeed)} km/s`
+                    : "—"}
                 </div>
               </div>
             </div>
@@ -456,9 +450,7 @@ export function HomeObservatory() {
             <div className="font-mono text-[10px] tracking-[0.18em] text-[#7D8C9F] uppercase">
               PORTAL 05 // DEEP HORIZON
             </div>
-            <h3 className="mt-1 text-xl font-medium text-[#EFF4FC]">
-              Beyond Our Solar System
-            </h3>
+            <h3 className="mt-1 text-xl font-medium text-[#EFF4FC]">Beyond Our Solar System</h3>
             <p className="mt-2.5 text-sm leading-relaxed text-[#9AA6B8]">
               {closestExoplanet
                 ? closestExoplanet.highlight
@@ -560,7 +552,8 @@ export function HomeObservatory() {
                 Orbital Mechanics Lab
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-[#95A3B6]">
-                Cross-reference Academy lessons with the live 3D Solar System scale &amp; eccentricity visualizer.
+                Cross-reference Academy lessons with the live 3D Solar System scale &amp;
+                eccentricity visualizer.
               </p>
               <div className="mt-4 font-mono text-[10px] text-[#8CB8FF]">
                 LAUNCH 3D CORRELATION →

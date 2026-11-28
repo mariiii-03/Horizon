@@ -21,7 +21,13 @@ const NAV_ITEMS: NavItem[] = [
     code: "01",
     angleDeg: -68,
     icon: () => (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
         <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" />
       </svg>
@@ -34,7 +40,13 @@ const NAV_ITEMS: NavItem[] = [
     code: "02",
     angleDeg: -41,
     icon: () => (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         <rect x="4" y="4" width="16" height="16" rx="2" />
         <circle cx="9" cy="9.5" r="1.5" />
         <path d="M20 15l-4.5-4.5L7 19" />
@@ -48,7 +60,13 @@ const NAV_ITEMS: NavItem[] = [
     code: "03",
     angleDeg: -14,
     icon: () => (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         <circle cx="12" cy="12" r="8" strokeDasharray="3 2" />
         <circle cx="12" cy="12" r="3" />
         <path d="M18.5 5.5l-4 4" />
@@ -62,7 +80,13 @@ const NAV_ITEMS: NavItem[] = [
     code: "04",
     angleDeg: 14,
     icon: () => (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         <circle cx="12" cy="12" r="4" />
         <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" />
       </svg>
@@ -75,7 +99,13 @@ const NAV_ITEMS: NavItem[] = [
     code: "05",
     angleDeg: 41,
     icon: () => (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         <circle cx="12" cy="12" r="4.5" />
         <ellipse cx="12" cy="12" rx="10" ry="3.8" transform="rotate(-24 12 12)" />
       </svg>
@@ -88,7 +118,13 @@ const NAV_ITEMS: NavItem[] = [
     code: "06",
     angleDeg: 68,
     icon: () => (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         <path d="M12 4L2 9l10 5 10-5-10-5z" />
         <path d="M6 11.5v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" />
       </svg>
@@ -121,7 +157,9 @@ export function SaturnOrbitalNav() {
             </Link>
             <span className="hidden text-white/20 sm:inline">/</span>
             <span className="hidden font-mono text-[10px] tracking-[0.16em] text-[#8A97AA] uppercase sm:inline">
-              {activeRoute ? `${activeRoute.code} // ${activeRoute.label}` : "00 // COMMAND OVERVIEW"}
+              {activeRoute
+                ? `${activeRoute.code} // ${activeRoute.label}`
+                : "00 // COMMAND OVERVIEW"}
             </span>
           </div>
 
@@ -188,7 +226,7 @@ export function SaturnOrbitalNav() {
                     }`}
                   >
                     <div className="font-mono text-[9px] tracking-widest opacity-60">
-                      {item.code} // MODULE
+                      {`${item.code} // MODULE`}
                     </div>
                     <div className="mt-0.5 font-medium">{item.shortLabel}</div>
                   </Link>
@@ -222,9 +260,7 @@ export function SaturnOrbitalNav() {
           />
           <div
             className={`pointer-events-none absolute top-1/2 left-[-64px] h-[218px] w-[218px] -translate-y-1/2 rounded-full transition-all duration-500 ease-out ${
-              isExpanded
-                ? "scale-100 opacity-100 border border-white/[0.08]"
-                : "scale-75 opacity-0"
+              isExpanded ? "scale-100 opacity-100 border border-white/[0.08]" : "scale-75 opacity-0"
             }`}
           />
 

@@ -33,7 +33,11 @@ html {
 body {
   background-color: transparent;
   color: #e8edf5;
-  font-family: var(--font-space-sans), system-ui, -apple-system, sans-serif;
+  font-family:
+    var(--font-space-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
   overflow-x: hidden;
 }
 

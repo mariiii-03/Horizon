@@ -286,7 +286,10 @@ function PlanetMesh({
   const tmpVec = useMemo(() => new THREE.Vector3(), []);
 
   const radius = getVisualRadius(planet, scaleMode);
-  const texture = useMemo(() => getPlanetTexture(planet.id, planet.color), [planet.id, planet.color]);
+  const texture = useMemo(
+    () => getPlanetTexture(planet.id, planet.color),
+    [planet.id, planet.color],
+  );
   const ringTexture = useMemo(
     () => (planet.id === "saturn" || planet.id === "uranus" ? getRingTexture(planet.id) : null),
     [planet.id],
@@ -414,9 +417,7 @@ function CameraRig({
     if (selectedPlanetId === "overview") {
       desiredTargetRef.current = new THREE.Vector3(0, 0, 0);
       desiredCamPosRef.current =
-        scaleMode === "proportional"
-          ? new THREE.Vector3(0, 56, 118)
-          : new THREE.Vector3(0, 28, 52);
+        scaleMode === "proportional" ? new THREE.Vector3(0, 56, 118) : new THREE.Vector3(0, 28, 52);
       animatingRef.current = true;
       return;
     }
@@ -503,7 +504,15 @@ export function SolarSystemCanvas({
         <pointLight position={[0, 0, 0]} intensity={2.6} decay={0.35} color="#FFF4D8" />
         <hemisphereLight args={["#6488C4", "#080B14", 0.22]} />
 
-        <Stars radius={160} depth={70} count={2400} factor={3.2} saturation={0.2} fade speed={0.3} />
+        <Stars
+          radius={160}
+          depth={70}
+          count={2400}
+          factor={3.2}
+          saturation={0.2}
+          fade
+          speed={0.3}
+        />
 
         <AsteroidBelt scaleMode={scaleMode} />
 

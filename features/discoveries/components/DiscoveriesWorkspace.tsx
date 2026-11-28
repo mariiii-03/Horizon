@@ -78,6 +78,8 @@ function renderApodMedia(apod: Apod) {
   }
 
   return (
+    // APOD images can come from arbitrary external domains not listed in next.config.ts remotePatterns.
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={apod.url}
       alt={apod.title}
@@ -100,10 +102,6 @@ export function DiscoveriesWorkspace() {
   const [archiveLoading, setArchiveLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [maxDate, setMaxDate] = useState<string>("2026-11-26");
-
-  useEffect(() => {
-    setMaxDate(todayIsoUtc());
-  }, []);
 
   const loadRecentFromAnchor = useCallback(async (anchorDate: string) => {
     setArchiveLoading(true);
@@ -139,8 +137,8 @@ export function DiscoveriesWorkspace() {
         const data = await fetchApi<Apod>(endpoint);
         setFeatured(data);
         setSelectedDate(data.date);
-        if (!date && data.date > maxDate) {
-          setMaxDate(data.date);
+        if (!date) {
+          setMaxDate((prev) => (data.date > prev ? data.date : prev));
         }
         setRecentArchive((prev) => {
           const exists = prev.some((p) => p.date === data.date);
@@ -151,18 +149,28 @@ export function DiscoveriesWorkspace() {
           void loadRecentFromAnchor(data.date);
         }
       } catch (err) {
-        setError(err instanceof Error ? err.message : "Failed to load Astronomy Picture of the Day.");
+        setError(
+          err instanceof Error ? err.message : "Failed to load Astronomy Picture of the Day.",
+        );
       } finally {
         setLoading(false);
       }
     },
-    [loadRecentFromAnchor, maxDate],
+    [loadRecentFromAnchor],
   );
 
   useEffect(() => {
-    void loadApod();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    let active = true;
+    const today = todayIsoUtc();
+    Promise.resolve().then(() => {
+      if (!active) return;
+      setMaxDate((prev) => (today > prev ? today : prev));
+      void loadApod();
+    });
+    return () => {
+      active = false;
+    };
+  }, [loadApod]);
 
   const isSaved = useMemo(() => {
     if (!hydrated || !featured) return false;
@@ -199,10 +207,7 @@ export function DiscoveriesWorkspace() {
         rightSlot={
           <div className="flex flex-wrap items-center gap-2">
             <StatusPill label="ARCHIVE: 1995 — PRESENT" tone="blue" />
-            <StatusPill
-              label={`${hydrated ? savedDiscoveries.length : 0} SAVED`}
-              tone="gold"
-            />
+            <StatusPill label={`${hydrated ? savedDiscoveries.length : 0} SAVED`} tone="gold" />
           </div>
         }
       />
@@ -322,7 +327,9 @@ export function DiscoveriesWorkspace() {
                     <MetricCell label="Observation Date" value={featured.date} highlight />
                     <MetricCell
                       label="Credit / Attribution"
-                      value={featured.copyright ? featured.copyright.slice(0, 26) : "NASA Public Domain"}
+                      value={
+                        featured.copyright ? featured.copyright.slice(0, 26) : "NASA Public Domain"
+                      }
                     />
                   </div>
                 </div>
@@ -349,9 +356,7 @@ export function DiscoveriesWorkspace() {
           <SectionLabel
             eyebrow="OBSERVATIONAL LOGS // CURATED ARCHIVE"
             title={
-              activeTab === "archive"
-                ? "Recent Daily Breakthroughs"
-                : "Saved Favourites Collection"
+              activeTab === "archive" ? "Recent Daily Breakthroughs" : "Saved Favourites Collection"
             }
           />
           <div className="flex items-center gap-1.5 self-start rounded border border-white/10 bg-[#080C15] p-1">
@@ -405,6 +410,7 @@ export function DiscoveriesWorkspace() {
                   <div>
                     <div className="relative h-52 w-full overflow-hidden bg-black">
                       {item.mediaType === "image" ? (
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                           src={item.url}
                           alt={item.title}
@@ -421,7 +427,9 @@ export function DiscoveriesWorkspace() {
                     </div>
 
                     <div className="p-5">
-                      <h3 className="font-serif text-xl font-medium text-[#F2EEE5]">{item.title}</h3>
+                      <h3 className="font-serif text-xl font-medium text-[#F2EEE5]">
+                        {item.title}
+                      </h3>
                       <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-[#95A3B7]">
                         {item.explanation}
                       </p>

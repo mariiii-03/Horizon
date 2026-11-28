@@ -123,9 +123,7 @@ export function StarfieldBackground() {
 
         // 55% concentrated smoothly around the Milky Way core, 45% uniform across sky
         const inBand = i % 20 < 11;
-        const x = inBand
-          ? width * (0.5 + (rx1 + rx2 - 1) * 0.34)
-          : rx1 * width;
+        const x = inBand ? width * (0.5 + (rx1 + rx2 - 1) * 0.34) : rx1 * width;
         const y = ry * height;
 
         // Razor-sharp sub-pixel to 1px pinpoints

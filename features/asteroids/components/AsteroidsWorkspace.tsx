@@ -1,15 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import {
-  Bar,
-  BarChart,
-  Cell,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import {
   ErrorBanner,
   HeroHeader,
@@ -112,10 +104,7 @@ export function AsteroidsWorkspace() {
 
   const selectedAsteroid = useMemo(() => {
     return (
-      asteroids.find((a) => a.id === selectedId) ??
-      filteredAsteroids[0] ??
-      asteroids[0] ??
-      null
+      asteroids.find((a) => a.id === selectedId) ?? filteredAsteroids[0] ?? asteroids[0] ?? null
     );
   }, [asteroids, filteredAsteroids, selectedId]);
 
@@ -379,13 +368,7 @@ export function AsteroidsWorkspace() {
                           stroke="#9EC4FF"
                           strokeWidth={1.5}
                         />
-                        <text
-                          x={12}
-                          y={4}
-                          fill="#9EC4FF"
-                          fontSize="8"
-                          fontFamily="monospace"
-                        >
+                        <text x={12} y={4} fill="#9EC4FF" fontSize="8" fontFamily="monospace">
                           EARTH
                         </text>
 
@@ -469,18 +452,8 @@ export function AsteroidsWorkspace() {
                     <div className="h-[290px] w-full pt-2">
                       <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={velocityChartData}>
-                          <XAxis
-                            dataKey="name"
-                            stroke="#6F7E93"
-                            fontSize={10}
-                            tickLine={false}
-                          />
-                          <YAxis
-                            stroke="#6F7E93"
-                            fontSize={10}
-                            tickLine={false}
-                            unit=" km/s"
-                          />
+                          <XAxis dataKey="name" stroke="#6F7E93" fontSize={10} tickLine={false} />
+                          <YAxis stroke="#6F7E93" fontSize={10} tickLine={false} unit=" km/s" />
                           <Tooltip
                             contentStyle={{
                               backgroundColor: "#080C15",

@@ -186,9 +186,7 @@ export function AcademyWorkspace() {
 
       {error && <ErrorBanner message={error} onRetry={() => void loadCurriculum()} />}
 
-      {loading && planets.length === 0 ? (
-        <LoadingPanel lines={4} height="h-56" />
-      ) : null}
+      {loading && planets.length === 0 ? <LoadingPanel lines={4} height="h-56" /> : null}
 
       {/* Section 1: Planetary Profiles of the Solar System */}
       {planets.length > 0 && (
@@ -201,7 +199,8 @@ export function AcademyWorkspace() {
                   title="Planetary Profiles of the Solar System"
                 />
                 <p className="mt-1 text-xs text-[#95A3B6]">
-                  Select any planetary dossier to study physical benchmarks, orbital dynamics, and complete its mastery check.
+                  Select any planetary dossier to study physical benchmarks, orbital dynamics, and
+                  complete its mastery check.
                 </p>
               </div>
               <Link
@@ -341,10 +340,7 @@ export function AcademyWorkspace() {
                   value={`${selectedPlanet.gravityMs2} m/s²`}
                   highlight
                 />
-                <MetricCell
-                  label="MEAN TEMP"
-                  value={`${selectedPlanet.meanTempC} °C`}
-                />
+                <MetricCell label="MEAN TEMP" value={`${selectedPlanet.meanTempC} °C`} />
                 <MetricCell
                   label="ORBITAL PERIOD"
                   value={
@@ -353,15 +349,8 @@ export function AcademyWorkspace() {
                       : "—"
                   }
                 />
-                <MetricCell
-                  label="AXIAL TILT"
-                  value={`${selectedPlanet.axialTiltDeg}°`}
-                />
-                <MetricCell
-                  label="CONFIRMED MOONS"
-                  value={`${selectedPlanet.moons}`}
-                  highlight
-                />
+                <MetricCell label="AXIAL TILT" value={`${selectedPlanet.axialTiltDeg}°`} />
+                <MetricCell label="CONFIRMED MOONS" value={`${selectedPlanet.moons}`} highlight />
               </div>
             </div>
           </TelemetryPanel>
@@ -379,7 +368,8 @@ export function AcademyWorkspace() {
               READY TO TEST YOUR SPACE KNOWLEDGE?
             </h2>
             <p className="mx-auto mt-1 max-w-xl text-xs text-[#95A3B6]">
-              Select a planetary topic below to launch a timed-style scientific verification quiz with instant explanations.
+              Select a planetary topic below to launch a timed-style scientific verification quiz
+              with instant explanations.
             </p>
           </div>
 

@@ -119,8 +119,8 @@ export const useHorizonStore = create<HorizonState>()(
         })),
       resetAcademyProgress: () => set({ completedLessons: [], quizResults: {} }),
     }),
-    { name: "horizon-observatory-store-v1" }
-  )
+    { name: "horizon-observatory-store-v1" },
+  ),
 );
 
 const emptySubscribe = () => () => {};

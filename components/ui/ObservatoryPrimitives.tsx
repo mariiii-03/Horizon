@@ -46,9 +46,7 @@ export function TelemetryPanel({
   children: ReactNode;
   className?: string;
 }) {
-  return (
-    <div className={`observatory-panel rounded-md p-5 sm:p-6 ${className}`}>{children}</div>
-  );
+  return <div className={`observatory-panel rounded-md p-5 sm:p-6 ${className}`}>{children}</div>;
 }
 
 export function SectionLabel({

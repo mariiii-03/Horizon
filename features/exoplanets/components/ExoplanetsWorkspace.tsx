@@ -116,12 +116,7 @@ export function ExoplanetsWorkspace() {
   }, [selectedId, planets]);
 
   const featured = useMemo(() => {
-    return (
-      selectedDetail ??
-      planets.find((p) => p.id === selectedId) ??
-      planets[0] ??
-      null
-    );
+    return selectedDetail ?? planets.find((p) => p.id === selectedId) ?? planets[0] ?? null;
   }, [selectedDetail, planets, selectedId]);
 
   const filteredPlanets = useMemo(() => {
@@ -172,9 +167,7 @@ export function ExoplanetsWorkspace() {
       .map(([starName, worlds]) => ({
         starName,
         hostStar: worlds[0].hostStar,
-        worlds: [...worlds].sort(
-          (a, b) => (a.semiMajorAxisAu ?? 99) - (b.semiMajorAxisAu ?? 99),
-        ),
+        worlds: [...worlds].sort((a, b) => (a.semiMajorAxisAu ?? 99) - (b.semiMajorAxisAu ?? 99)),
       }))
       .sort((a, b) => b.worlds.length - a.worlds.length)
       .slice(0, 5);
@@ -244,9 +237,7 @@ export function ExoplanetsWorkspace() {
 
       {error && <ErrorBanner message={error} onRetry={() => void loadExoplanets(searchQuery)} />}
 
-      {loading && planets.length === 0 ? (
-        <LoadingPanel lines={5} height="h-64" />
-      ) : null}
+      {loading && planets.length === 0 ? <LoadingPanel lines={5} height="h-64" /> : null}
 
       {/* Featured Exoplanet Telemetry & Visual Dossier */}
       {featured && (
@@ -314,10 +305,7 @@ export function ExoplanetsWorkspace() {
 
           <div className="flex flex-col gap-5 lg:col-span-6">
             <TelemetryPanel>
-              <SectionLabel
-                eyebrow="TARGET TELEMETRY"
-                title="Host Star & Planetary Telemetry"
-              />
+              <SectionLabel eyebrow="TARGET TELEMETRY" title="Host Star & Planetary Telemetry" />
               <div className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
                 <MetricCell
                   label="HOST STAR"
@@ -355,9 +343,7 @@ export function ExoplanetsWorkspace() {
                 />
                 <MetricCell
                   label="EQUILIBRIUM TEMP"
-                  value={
-                    featured.equilibriumTempK != null ? `${featured.equilibriumTempK} K` : "—"
-                  }
+                  value={featured.equilibriumTempK != null ? `${featured.equilibriumTempK} K` : "—"}
                   sub={
                     featured.equilibriumTempK != null
                       ? `${Math.round(featured.equilibriumTempK - 273.15)} °C`
@@ -381,7 +367,10 @@ export function ExoplanetsWorkspace() {
               />
               <div className="mt-3 h-44 w-full">
                 <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={spectrumChartData} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
+                  <AreaChart
+                    data={spectrumChartData}
+                    margin={{ top: 8, right: 8, left: -16, bottom: 0 }}
+                  >
                     <defs>
                       <linearGradient id="exoTempGrad" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="5%" stopColor="#8CB8FF" stopOpacity={0.42} />
@@ -425,87 +414,96 @@ export function ExoplanetsWorkspace() {
       )}
 
       {/* Comparative Morphology // Benchmark Clusters */}
-      {morphologyClusters.rocky && morphologyClusters.hotJupiter && morphologyClusters.subNeptune && (
-        <section className="mt-10">
-          <TelemetryPanel>
-            <div className="font-mono text-[10px] tracking-[0.16em] text-[#7D8C9F] uppercase">
-              [COMPARATIVE MORPHOLOGY // BENCHMARK CLUSTERS]
-            </div>
-            <h2 className="mt-1 text-xl font-medium text-[#EFF4FC]">
-              PROPORTIONAL PLANETARY TAXONOMY
-            </h2>
-            <p className="mt-1 text-xs text-[#95A3B6]">
-              Direct scale normalization against Solar System archetypes using live NASA Exoplanet Archive parameters.
-            </p>
+      {morphologyClusters.rocky &&
+        morphologyClusters.hotJupiter &&
+        morphologyClusters.subNeptune && (
+          <section className="mt-10">
+            <TelemetryPanel>
+              <div className="font-mono text-[10px] tracking-[0.16em] text-[#7D8C9F] uppercase">
+                [COMPARATIVE MORPHOLOGY // BENCHMARK CLUSTERS]
+              </div>
+              <h2 className="mt-1 text-xl font-medium text-[#EFF4FC]">
+                PROPORTIONAL PLANETARY TAXONOMY
+              </h2>
+              <p className="mt-1 text-xs text-[#95A3B6]">
+                Direct scale normalization against Solar System archetypes using live NASA Exoplanet
+                Archive parameters.
+              </p>
 
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  title: "CLUSTER 01 // TERRESTRIAL SILICATE",
-                  refName: "EARTH",
-                  refRadius: "1.00 R⊕",
-                  refTemp: "255 K",
-                  exo: morphologyClusters.rocky,
-                },
-                {
-                  title: "CLUSTER 02 // GAS GIANT VS HOT JUPITER",
-                  refName: "JUPITER",
-                  refRadius: "11.2 R⊕",
-                  refTemp: "163 K",
-                  exo: morphologyClusters.hotJupiter,
-                },
-                {
-                  title: "CLUSTER 03 // SUB-NEPTUNE / SUPER-EARTH",
-                  refName: "NEPTUNE",
-                  refRadius: "3.88 R⊕",
-                  refTemp: "72 K",
-                  exo: morphologyClusters.subNeptune,
-                },
-              ].map((cluster) => (
-                <div
-                  key={cluster.title}
-                  className="rounded border border-white/[0.08] bg-[#060912] p-4 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="font-mono text-[10px] tracking-[0.14em] text-[#8CB8FF] uppercase">
-                      {cluster.title}
-                    </div>
-                    <div className="mt-3 grid grid-cols-2 gap-2 rounded border border-white/[0.06] bg-[#0B101B] p-3 text-center">
-                      <div>
-                        <div className="font-mono text-[9px] text-[#78879C]">{cluster.refName}</div>
-                        <div className="mt-1 font-mono text-sm font-semibold text-white">
-                          {cluster.refRadius}
-                        </div>
-                        <div className="font-mono text-[10px] text-[#78879C]">{cluster.refTemp}</div>
-                      </div>
-                      <div className="border-l border-white/[0.08] pl-2">
-                        <div className="truncate font-mono text-[9px] text-[#DFC99D]">
-                          {cluster.exo.name}
-                        </div>
-                        <div className="mt-1 font-mono text-sm font-semibold text-[#8CB8FF]">
-                          {cluster.exo.radiusEarth != null ? `${cluster.exo.radiusEarth} R⊕` : "—"}
-                        </div>
-                        <div className="font-mono text-[10px] text-[#78879C]">
-                          {cluster.exo.equilibriumTempK != null
-                            ? `${cluster.exo.equilibriumTempK} K`
-                            : "—"}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedId(cluster.exo.id)}
-                    className="mt-3 w-full rounded border border-white/10 py-1.5 font-mono text-[10px] tracking-[0.12em] text-[#8CB8FF] uppercase transition hover:border-[#8CB8FF]/40 hover:bg-[#8CB8FF]/10"
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                {[
+                  {
+                    title: "CLUSTER 01 // TERRESTRIAL SILICATE",
+                    refName: "EARTH",
+                    refRadius: "1.00 R⊕",
+                    refTemp: "255 K",
+                    exo: morphologyClusters.rocky,
+                  },
+                  {
+                    title: "CLUSTER 02 // GAS GIANT VS HOT JUPITER",
+                    refName: "JUPITER",
+                    refRadius: "11.2 R⊕",
+                    refTemp: "163 K",
+                    exo: morphologyClusters.hotJupiter,
+                  },
+                  {
+                    title: "CLUSTER 03 // SUB-NEPTUNE / SUPER-EARTH",
+                    refName: "NEPTUNE",
+                    refRadius: "3.88 R⊕",
+                    refTemp: "72 K",
+                    exo: morphologyClusters.subNeptune,
+                  },
+                ].map((cluster) => (
+                  <div
+                    key={cluster.title}
+                    className="rounded border border-white/[0.08] bg-[#060912] p-4 flex flex-col justify-between"
                   >
-                    Inspect {cluster.exo.name} →
-                  </button>
-                </div>
-              ))}
-            </div>
-          </TelemetryPanel>
-        </section>
-      )}
+                    <div>
+                      <div className="font-mono text-[10px] tracking-[0.14em] text-[#8CB8FF] uppercase">
+                        {cluster.title}
+                      </div>
+                      <div className="mt-3 grid grid-cols-2 gap-2 rounded border border-white/[0.06] bg-[#0B101B] p-3 text-center">
+                        <div>
+                          <div className="font-mono text-[9px] text-[#78879C]">
+                            {cluster.refName}
+                          </div>
+                          <div className="mt-1 font-mono text-sm font-semibold text-white">
+                            {cluster.refRadius}
+                          </div>
+                          <div className="font-mono text-[10px] text-[#78879C]">
+                            {cluster.refTemp}
+                          </div>
+                        </div>
+                        <div className="border-l border-white/[0.08] pl-2">
+                          <div className="truncate font-mono text-[9px] text-[#DFC99D]">
+                            {cluster.exo.name}
+                          </div>
+                          <div className="mt-1 font-mono text-sm font-semibold text-[#8CB8FF]">
+                            {cluster.exo.radiusEarth != null
+                              ? `${cluster.exo.radiusEarth} R⊕`
+                              : "—"}
+                          </div>
+                          <div className="font-mono text-[10px] text-[#78879C]">
+                            {cluster.exo.equilibriumTempK != null
+                              ? `${cluster.exo.equilibriumTempK} K`
+                              : "—"}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedId(cluster.exo.id)}
+                      className="mt-3 w-full rounded border border-white/10 py-1.5 font-mono text-[10px] tracking-[0.12em] text-[#8CB8FF] uppercase transition hover:border-[#8CB8FF]/40 hover:bg-[#8CB8FF]/10"
+                    >
+                      Inspect {cluster.exo.name} →
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </TelemetryPanel>
+          </section>
+        )}
 
       {/* Multi-Planet Star Systems Architecture */}
       {starSystems.length > 0 && (
@@ -537,7 +535,9 @@ export function ExoplanetsWorkspace() {
                     </span>
                   </div>
                   <div className="font-mono text-[10px] text-[#DFC99D]">
-                    {sys.hostStar.distanceLy != null ? `${sys.hostStar.distanceLy} LIGHT-YEARS` : ""}
+                    {sys.hostStar.distanceLy != null
+                      ? `${sys.hostStar.distanceLy} LIGHT-YEARS`
+                      : ""}
                   </div>
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-2">

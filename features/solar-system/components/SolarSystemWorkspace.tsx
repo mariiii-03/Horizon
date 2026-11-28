@@ -70,7 +70,13 @@ export function SolarSystemWorkspace() {
   }, [initialPlanetParam]);
 
   useEffect(() => {
-    void loadPlanets();
+    let active = true;
+    Promise.resolve().then(() => {
+      if (active) void loadPlanets();
+    });
+    return () => {
+      active = false;
+    };
   }, [loadPlanets]);
 
   // Fetch individual planet endpoint whenever selection changes to keep telemetry synchronized with /api/planets/[id]
@@ -105,8 +111,14 @@ export function SolarSystemWorkspace() {
     return planets.find((p) => p.id === selectedId) ?? planets[0] ?? null;
   }, [planets, selectedDetail, selectedId]);
 
-  const bodyA = useMemo(() => planets.find((p) => p.id === compareAId) ?? planets[3], [planets, compareAId]);
-  const bodyB = useMemo(() => planets.find((p) => p.id === compareBId) ?? planets[6], [planets, compareBId]);
+  const bodyA = useMemo(
+    () => planets.find((p) => p.id === compareAId) ?? planets[3],
+    [planets, compareAId],
+  );
+  const bodyB = useMemo(
+    () => planets.find((p) => p.id === compareBId) ?? planets[6],
+    [planets, compareBId],
+  );
 
   return (
     <main className="mx-auto w-full max-w-6xl px-5 pb-16 sm:px-8">
@@ -119,7 +131,10 @@ export function SolarSystemWorkspace() {
         rightSlot={
           <div className="flex flex-wrap items-center gap-2">
             <StatusPill label="9 CATALOGED BODIES" tone="blue" />
-            <StatusPill label={paused ? "SIMULATION PAUSED" : `${speedMultiplier}X ORBITAL RATE`} tone="gold" />
+            <StatusPill
+              label={paused ? "SIMULATION PAUSED" : `${speedMultiplier}X ORBITAL RATE`}
+              tone="gold"
+            />
           </div>
         }
       />
@@ -156,10 +171,7 @@ export function SolarSystemWorkspace() {
                       : "border-white/10 bg-[#0B101A]/75 text-[#98A6B8] hover:border-white/25 hover:text-white"
                   }`}
                 >
-                  <span
-                    className="h-2.5 w-2.5 rounded-full"
-                    style={{ backgroundColor: p.color }}
-                  />
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: p.color }} />
                   {p.name}
                 </button>
               );
@@ -276,7 +288,9 @@ export function SolarSystemWorkspace() {
                         </h2>
                         <div className="mt-1.5 flex flex-wrap gap-1.5">
                           <StatusPill label={selectedPlanet.type.replace("-", " ")} tone="gold" />
-                          {selectedPlanet.hasRings && <StatusPill label="Ring System" tone="blue" />}
+                          {selectedPlanet.hasRings && (
+                            <StatusPill label="Ring System" tone="blue" />
+                          )}
                         </div>
                       </div>
                       <PlanetDisc
@@ -305,22 +319,13 @@ export function SolarSystemWorkspace() {
                         label="Surface Gravity"
                         value={`${formatNumber(selectedPlanet.gravityMs2, 1)} m/s²`}
                       />
-                      <MetricCell
-                        label="Mean Temp"
-                        value={`${selectedPlanet.meanTempC} °C`}
-                      />
+                      <MetricCell label="Mean Temp" value={`${selectedPlanet.meanTempC} °C`} />
                       <MetricCell
                         label="Rotation Period"
                         value={formatRotation(selectedPlanet.rotationHours)}
                       />
-                      <MetricCell
-                        label="Axial Tilt"
-                        value={`${selectedPlanet.axialTiltDeg}°`}
-                      />
-                      <MetricCell
-                        label="Confirmed Moons"
-                        value={String(selectedPlanet.moons)}
-                      />
+                      <MetricCell label="Axial Tilt" value={`${selectedPlanet.axialTiltDeg}°`} />
+                      <MetricCell label="Confirmed Moons" value={String(selectedPlanet.moons)} />
                       <MetricCell
                         label="Semi-Major Axis"
                         value={
